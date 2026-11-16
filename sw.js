@@ -1,19 +1,26 @@
 
-const CACHE_NAME = "portfolio-1-v2";
+const CACHE_NAME = "portfolio-1-v3";
 
-const FILES_TO_CACHE = [
+const CORE_FILES = [
   "./",
   "./index.html",
-  "./profile.jpg",
-  "./manifest.json",
-  "./icon-192.svg",
-  "./icon-512.svg"
+  "./manifest.json"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then(async cache => {
+      await cache.addAll(CORE_FILES);
+
+      // Optional files: cache only if available
+      await Promise.all(
+        ["./profile.jpg", "./icon-192.svg", "./icon-512.svg"].map(
+          file => cache.add(file).catch(() => {})
+        )
+      );
+    })
   );
+
   self.skipWaiting();
 });
 
@@ -22,20 +29,26 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(key => key !== CACHE_NAME)
+          .filter(key => key.startsWith("portfolio-1-") && key !== CACHE_NAME)
           .map(key => caches.delete(key))
       )
     )
   );
+
   self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
-  if (event.request.method !== "GET") return;
+  const request = event.request;
+
+  if (
+    request.method !== "GET" ||
+    new URL(request.url).origin !== self.location.origin
+  ) return;
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
+    caches.match(request).then(cached => {
+      return cached || fetch(request);
     })
   );
 });

@@ -5,148 +5,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portfolio 1 | Priyansh Jaat</title>
-<meta name="description" content="Priyansh Jaat's personal portfolio, coding projects and technology learning journey.">
-<meta name="theme-color" content="#07111f">
+<title>Priyansh Jaat | Portfolio 1</title>
 
 <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Priyansh Jaat Personal Portfolio">
 
 <style>
 :root {
-  --bg:#050b18;
-  --card:#0c1930;
-  --card2:#102443;
-  --text:#f4f8ff;
-  --muted:#a9bad2;
-  --blue:#00bfff;
-  --border:#164879;
+  --bg:#07111f;
+  --card:#101f33;
+  --text:#f4f7ff;
+  --muted:#aab8cc;
+  --accent:#38bdf8;
 }
 
 body.light {
-  --bg:#eef5ff;
+  --bg:#f3f7fc;
   --card:#ffffff;
-  --card2:#e2efff;
-  --text:#102039;
-  --muted:#52657e;
-  --blue:#087fbd;
-  --border:#b8d8f5;
+  --text:#102033;
+  --muted:#52657b;
+  --accent:#087eb5;
 }
 
 * {
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
   scroll-behavior:smooth;
 }
 
 body {
+  font-family:Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
-  font-family:Arial,sans-serif;
-  transition:background .3s,color .3s;
-  overflow-x:hidden;
+  transition:.3s;
 }
-
-a {text-decoration:none}
 
 header {
   position:sticky;
   top:0;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 7%;
+  z-index:10;
   background:var(--card);
-  border-bottom:1px solid var(--border);
+  padding:16px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 
 .logo {
-  font-size:23px;
+  font-size:21px;
   font-weight:bold;
-  color:var(--blue);
+  color:var(--accent);
 }
 
 nav {
   display:flex;
+  gap:20px;
   align-items:center;
-  gap:22px;
 }
 
 nav a {
   color:var(--text);
-  font-size:14px;
-  transition:.2s;
+  text-decoration:none;
 }
 
-nav a:hover {color:var(--blue)}
+nav a:hover {
+  color:var(--accent);
+}
 
 button {
   cursor:pointer;
-  border:none;
+  border:0;
   border-radius:8px;
-  padding:11px 15px;
+  padding:10px 14px;
   font-weight:bold;
 }
 
-.theme-btn {
-  background:var(--blue);
-  color:#00101c;
+#themeBtn,#menuBtn,#installBtn {
+  background:var(--accent);
+  color:#06111e;
 }
 
 #menuBtn {
   display:none;
-  background:var(--blue);
-  font-size:20px;
+}
+
+#installBtn {
+  display:none;
+  margin-top:15px;
 }
 
 section {
   padding:75px 8%;
-  scroll-margin-top:70px;
+  scroll-margin-top:65px;
 }
 
 .hero {
   min-height:85vh;
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:55px;
+  justify-content:center;
+  gap:45px;
   flex-wrap:wrap;
-  background:
-    radial-gradient(circle at 80% 40%,#003c7544,transparent 45%);
 }
 
-.profile {
-  width:230px;
-  height:230px;
+.hero img {
+  width:220px;
+  height:220px;
   object-fit:cover;
   border-radius:50%;
-  border:4px solid var(--blue);
-  box-shadow:0 0 35px #00bfff55;
+  border:4px solid var(--accent);
+  box-shadow:0 0 30px #38bdf855;
 }
 
-.hero-content {max-width:550px}
-
-.small-heading {
-  color:var(--blue);
-  letter-spacing:3px;
-  font-size:13px;
+.hero-content {
+  max-width:550px;
 }
 
 h1 {
-  font-size:44px;
-  margin:15px 0;
+  font-size:42px;
+  margin:12px 0;
 }
 
-.typing {
-  font-size:23px;
-  font-weight:bold;
-  color:var(--blue);
-  min-height:30px;
-}
-
-.hero p {
-  margin-top:20px;
+h2 {
+  font-size:30px;
+  margin-bottom:25px;
+  color:var(--accent);
 }
 
 p {
@@ -154,150 +140,87 @@ p {
   line-height:1.8;
 }
 
+.typing {
+  color:var(--accent);
+  font-size:21px;
+  font-weight:bold;
+}
+
 .btn {
   display:inline-block;
   margin-top:22px;
-  padding:13px 22px;
-  border-radius:30px;
-  background:var(--blue);
-  color:#00101c;
+  padding:12px 20px;
+  background:var(--accent);
+  color:#06111e;
+  border-radius:8px;
+  text-decoration:none;
   font-weight:bold;
-  box-shadow:0 0 18px #00bfff66;
 }
-
-.btn:hover {transform:translateY(-3px)}
-
-h2 {
-  font-size:31px;
-  color:var(--blue);
-  margin-bottom:28px;
-}
-
-h3 {margin-bottom:12px}
 
 .card-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px;
 }
 
 .card {
   background:var(--card);
   padding:24px;
-  border:1px solid var(--border);
-  border-radius:15px;
+  border-radius:14px;
+  border:1px solid #38bdf822;
   transition:.25s;
 }
 
 .card:hover {
   transform:translateY(-5px);
-  box-shadow:0 8px 25px #00bfff20;
 }
 
-.card h3 {color:var(--blue)}
-
-.skill-icon {
-  font-size:34px;
+.card h3 {
   margin-bottom:12px;
-}
-
-.tag {
-  display:inline-block;
-  background:var(--card2);
-  color:var(--blue);
-  padding:6px 10px;
-  border-radius:20px;
-  font-size:12px;
-  margin-top:12px;
-}
-
-details {
-  margin-top:15px;
-  border-top:1px solid var(--border);
-  padding-top:12px;
-}
-
-summary {
-  color:var(--blue);
-  cursor:pointer;
-  font-weight:bold;
-}
-
-details p {margin-top:12px}
-
-.project-card {
-  overflow:hidden;
-}
-
-.project-top {
-  font-size:35px;
-  margin-bottom:15px;
-}
-
-.project-link {
-  display:inline-block;
-  margin-top:15px;
-  color:var(--blue);
-  font-weight:bold;
+  color:var(--accent);
 }
 
 .socials {
   display:flex;
-  flex-wrap:wrap;
   gap:15px;
-  margin-top:22px;
+  flex-wrap:wrap;
+  margin-top:20px;
 }
 
 .socials a {
-  border:1px solid var(--blue);
-  color:var(--blue);
-  padding:12px 20px;
-  border-radius:10px;
-}
-
-.socials a:hover {
-  background:var(--blue);
-  color:#00101c;
+  color:var(--accent);
+  text-decoration:none;
+  border:1px solid var(--accent);
+  padding:12px 18px;
+  border-radius:8px;
 }
 
 .clock {
-  font-size:27px;
-  color:var(--blue);
+  font-size:23px;
+  color:var(--accent);
   margin-top:15px;
 }
 
-#installBtn {
-  display:none;
-  margin-top:20px;
-  background:var(--blue);
-  color:#00101c;
-}
-
 footer {
-  padding:28px 15px;
   text-align:center;
+  padding:25px;
   background:var(--card);
-  border-top:1px solid var(--border);
+  color:var(--muted);
 }
 
 #topBtn {
-  display:none;
   position:fixed;
   right:18px;
-  bottom:20px;
-  z-index:50;
-  background:var(--blue);
-  color:#00101c;
-  font-size:22px;
-  border-radius:50%;
-  width:48px;
-  height:48px;
+  bottom:18px;
+  background:var(--accent);
+  display:none;
+  font-size:20px;
 }
 
-@media(max-width:750px) {
-  header {padding:14px 5%}
-
-  #menuBtn {display:block}
+@media(max-width:700px) {
+  #menuBtn {
+    display:block;
+  }
 
   nav {
     display:none;
@@ -306,26 +229,25 @@ footer {
     left:0;
     width:100%;
     background:var(--card);
-    padding:22px;
+    padding:20px;
     flex-direction:column;
-    border-bottom:1px solid var(--border);
+    align-items:center;
   }
 
-  nav.open {display:flex}
+  nav.open {
+    display:flex;
+  }
 
-  h1 {font-size:35px}
+  h1 {
+    font-size:34px;
+  }
 
-  section {padding:60px 6%}
+  section {
+    padding:60px 6%;
+  }
 
   .hero {
     text-align:center;
-    min-height:80vh;
-    gap:30px;
-  }
-
-  .profile {
-    width:185px;
-    height:185px;
   }
 }
 </style>
@@ -334,7 +256,7 @@ footer {
 <body>
 
 <header>
-  <div class="logo">👑 PORTFOLIO 1</div>
+  <div class="logo">PRIYANSH.</div>
 
   <button id="menuBtn" onclick="toggleMenu()">☰</button>
 
@@ -344,286 +266,133 @@ footer {
     <a href="#skills" onclick="closeMenu()">Skills</a>
     <a href="#projects" onclick="closeMenu()">Projects</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
-    <button class="theme-btn" onclick="toggleTheme()">☀ / ☾</button>
+    <button id="themeBtn" onclick="toggleTheme()">☀ / ☾</button>
   </nav>
 </header>
 
-<!-- HOME -->
-
 <section class="hero" id="home">
 
-  <img class="profile"
-       src="./profile.jpg"
-       alt="Priyansh Jaat">
+  <img src="./profile.jpg"
+       alt="Priyansh profile photo"
+       onerror="this.style.display='none'">
 
   <div class="hero-content">
+    <p>HELLO, WELCOME TO MY WEBSITE</p>
 
-    <div class="small-heading">WELCOME TO MY DIGITAL WORLD</div>
-
-    <h1>Hi, I'm <span style="color:var(--blue)">Priyansh Jaat</span></h1>
+    <h1>I'm Priyansh Jaat</h1>
 
     <div class="typing" id="typing">Coding Learner</div>
 
-    <p>
-      I am passionate about coding, technology, web development
-      and exploring the digital world. I believe in learning
-      something new every day.
+    <p style="margin-top:18px">
+      I am interested in coding, technology, web development
+      and learning new things every day.
     </p>
 
-    <a href="#projects" class="btn">Explore My Work →</a>
+    <a class="btn" href="#about">Explore More</a>
 
     <br>
 
-    <button id="installBtn" onclick="installApp()">
-      Install Portfolio App
-    </button>
-
+    <button id="installBtn">Install Portfolio App</button>
   </div>
+
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
-
   <h2>About Me</h2>
 
   <div class="card">
-
     <h3>Who Am I?</h3>
-
     <p>
-      Hello! I am Priyansh Jaat. I enjoy learning programming,
-      building websites and exploring new technologies.
-      I am currently developing my knowledge of HTML, CSS,
-      JavaScript, Python, computer networking and cybersecurity.
+      Hello! I am Priyansh Jaat. I enjoy learning coding,
+      exploring technology and building websites.
+      My goal is to improve my skills and create useful projects.
     </p>
-
-    <p>
-      My goal is to keep improving my skills and turn my ideas
-      into useful digital projects.
-    </p>
-
-    <span class="tag">Dream • Code • Create</span>
-
   </div>
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
-
-  <h2>My Skills & Learning</h2>
+  <h2>My Skills & Interests</h2>
 
   <div class="card-grid">
-
     <div class="card">
-      <div class="skill-icon">🌐</div>
       <h3>HTML</h3>
-      <p>HTML creates the structure of a website using headings,
-      paragraphs, images, links and sections.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>HTML stands for HyperText Markup Language. It helps
-        organize the content of webpages.</p>
-      </details>
+      <p>Learning webpage structure.</p>
     </div>
 
     <div class="card">
-      <div class="skill-icon">🎨</div>
       <h3>CSS</h3>
-      <p>CSS controls the design, colors, layout, spacing
-      and appearance of a website.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>CSS stands for Cascading Style Sheets. It makes
-        webpages attractive and responsive on mobile devices.</p>
-      </details>
+      <p>Learning website design.</p>
     </div>
 
     <div class="card">
-      <div class="skill-icon">⚡</div>
       <h3>JavaScript</h3>
-      <p>JavaScript makes websites interactive with buttons,
-      animations and dynamic features.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>JavaScript can respond to user actions, update page
-        content and create interactive web applications.</p>
-      </details>
+      <p>Learning interactive websites.</p>
     </div>
 
     <div class="card">
-      <div class="skill-icon">🐍</div>
       <h3>Python</h3>
-      <p>Python is a programming language used for automation,
-      applications and problem solving.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>Python is known for readable syntax. It is used in
-        data analysis, automation and software development.</p>
-      </details>
+      <p>Exploring programming.</p>
     </div>
 
     <div class="card">
-      <div class="skill-icon">🖧</div>
       <h3>Networking</h3>
-      <p>Learning how computers communicate and share
-      information through networks.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>Topics include IP addresses, MAC addresses, routers,
-        switches, network topologies and protocols.</p>
-      </details>
+      <p>Learning computer networks.</p>
     </div>
 
     <div class="card">
-      <div class="skill-icon">🛡️</div>
       <h3>Cybersecurity</h3>
-      <p>Exploring computer security, privacy and safe
-      ways to protect digital information.</p>
-      <details>
-        <summary>View Details</summary>
-        <p>Learning topics include online safety, authentication,
-        network security and ethical security practices.</p>
-      </details>
+      <p>Exploring online safety and security.</p>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS -->
-
 <section id="projects">
-
   <h2>My Projects</h2>
 
   <div class="card-grid">
-
-    <div class="card project-card">
-      <div class="project-top">💻</div>
-      <h3>Personal Portfolio</h3>
-      <p>
-        My personal portfolio website built with HTML, CSS
-        and JavaScript. It presents my introduction,
-        interests and projects.
-      </p>
-      <span class="tag">HTML • CSS • JavaScript</span>
-      <details>
-        <summary>View Details</summary>
-        <p>
-          This project includes a responsive layout,
-          profile photo, navigation menu, theme switcher
-          and interactive typing effect.
-        </p>
-      </details>
+    <div class="card">
+      <h3>My Portfolio</h3>
+      <p>My personal website built using HTML, CSS and JavaScript.</p>
     </div>
 
-    <div class="card project-card">
-      <div class="project-top">📱</div>
-      <h3>Portfolio 1 PWA</h3>
-      <p>
-        Turning my portfolio website into an installable
-        mobile web app.
-      </p>
-      <span class="tag">PWA • Web App</span>
-      <details>
-        <summary>View Details</summary>
-        <p>
-          This project uses a web app manifest and service
-          worker to support installation and offline access
-          to cached website content.
-        </p>
-      </details>
+    <div class="card">
+      <h3>More Projects</h3>
+      <p>More coding projects will be added here as I build them.</p>
     </div>
-
-    <div class="card project-card">
-      <div class="project-top">🐍</div>
-      <h3>Python Learning</h3>
-      <p>
-        Practising Python programming and learning how
-        to write simple programs.
-      </p>
-      <span class="tag">Python • Programming</span>
-      <details>
-        <summary>View Details</summary>
-        <p>
-          Learning variables, conditions, loops, functions
-          and basic problem solving.
-        </p>
-      </details>
-    </div>
-
-    <div class="card project-card">
-      <div class="project-top">🌐</div>
-      <h3>Networking Learning</h3>
-      <p>
-        Exploring how devices connect and communicate
-        with each other.
-      </p>
-      <span class="tag">Networking • Basics</span>
-      <details>
-        <summary>View Details</summary>
-        <p>
-          Learning about IP addresses, MAC addresses,
-          routers, switches and network topology.
-        </p>
-      </details>
-    </div>
-
   </div>
-
 </section>
 
-<!-- CONTACT -->
-
 <section id="contact">
-
   <h2>Connect With Me</h2>
 
-  <p>
-    Follow my journey and connect with me on social platforms.
-  </p>
+  <p>You can find me on these platforms.</p>
 
   <div class="socials">
-
     <a href="https://instagram.com/priyansh.vyn"
-       target="_blank" rel="noopener">
-       Instagram
-    </a>
+       target="_blank" rel="noopener">Instagram</a>
 
     <a href="https://github.com/jatpriyansh69-web"
-       target="_blank" rel="noopener">
-       GitHub
-    </a>
-
+       target="_blank" rel="noopener">GitHub</a>
   </div>
 
-  <h3 style="margin-top:35px">Current Time</h3>
+  <h3 style="margin-top:30px">Current Time</h3>
 
   <div class="clock" id="clock">--:--:--</div>
-
 </section>
 
 <footer>
-  <p>© 2026 Priyansh Jaat</p>
-  <p>Portfolio 1 | Dream • Code • Create</p>
+  © 2026 Priyansh Jaat | Personal Portfolio
 </footer>
 
 <button id="topBtn"
-        onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  ↑
-</button>
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-
-// TYPING EFFECT
-
 const words = [
   "Coding Learner",
   "Web Developer in Progress",
   "Tech Enthusiast",
-  "Networking Learner",
-  "Python Learner"
+  "Networking Learner"
 ];
 
 let wordIndex = 0;
@@ -631,42 +400,33 @@ let charIndex = 0;
 let deleting = false;
 
 function typeEffect() {
-
   const el = document.getElementById("typing");
   const word = words[wordIndex];
 
-  el.textContent = word.substring(0,charIndex);
+  el.textContent = word.substring(0, charIndex);
 
   if (!deleting && charIndex < word.length) {
     charIndex++;
-    setTimeout(typeEffect,100);
-  }
-  else if (deleting && charIndex > 0) {
+    setTimeout(typeEffect, 100);
+  } else if (deleting && charIndex > 0) {
     charIndex--;
-    setTimeout(typeEffect,50);
-  }
-  else {
+    setTimeout(typeEffect, 50);
+  } else {
     deleting = !deleting;
 
     if (!deleting) {
       wordIndex = (wordIndex + 1) % words.length;
     }
 
-    setTimeout(typeEffect,700);
+    setTimeout(typeEffect, 700);
   }
 }
 
 typeEffect();
 
-
-// DARK AND LIGHT MODE
-
 function toggleTheme() {
   document.body.classList.toggle("light");
 }
-
-
-// MOBILE MENU
 
 function toggleMenu() {
   document.getElementById("nav").classList.toggle("open");
@@ -676,77 +436,54 @@ function closeMenu() {
   document.getElementById("nav").classList.remove("open");
 }
 
-
-// DIGITAL CLOCK
-
 function updateClock() {
   document.getElementById("clock").textContent =
     new Date().toLocaleTimeString("en-IN");
 }
 
 updateClock();
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
 
-
-// BACK TO TOP
-
-window.addEventListener("scroll",function() {
-
+window.addEventListener("scroll", function() {
   document.getElementById("topBtn").style.display =
     window.scrollY > 300 ? "block" : "none";
-
 });
 
-
-// PWA SERVICE WORKER
+/* PWA SERVICE WORKER */
 
 if ("serviceWorker" in navigator) {
-
-  window.addEventListener("load",function() {
-
+  window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js")
-      .then(function() {
-        console.log("Portfolio 1 PWA is ready");
-      })
-      .catch(function(error) {
-        console.log("PWA registration error:",error);
-      });
-
+      .then(() => console.log("PWA Ready"))
+      .catch(error => console.log("PWA Error:", error));
   });
-
 }
 
-
-// INSTALL APP BUTTON
+/* APP INSTALL BUTTON */
 
 let deferredPrompt;
+
 const installBtn = document.getElementById("installBtn");
 
-window.addEventListener("beforeinstallprompt",function(event) {
-
+window.addEventListener("beforeinstallprompt", event => {
   event.preventDefault();
   deferredPrompt = event;
   installBtn.style.display = "inline-block";
-
 });
 
-async function installApp() {
-
+installBtn.addEventListener("click", async () => {
   if (!deferredPrompt) return;
 
   deferredPrompt.prompt();
-
   await deferredPrompt.userChoice;
 
   deferredPrompt = null;
   installBtn.style.display = "none";
-
-}
-
-window.addEventListener("appinstalled",function() {
-  installBtn.style.display = "none";
 });
 
+window.addEventListener("appinstalled", () => {
+  installBtn.style.display = "none";
+});
 </script>
 
 </body>
