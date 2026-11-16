@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official personal portfolio of Priyansh Jaat - Developer and Coding Enthusiast">
+<title>Priyansh Jaat | Developer Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue: #00c8ff;
+  --bg: #070b14;
+  --card: #101a2b;
+  --text: #ffffff;
+  --muted: #b7c5d8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #080e1b;
+  border-bottom: 1px solid #1b2d42;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+  background: radial-gradient(circle at 70% 40%, #123251, #070b14 65%);
+}
+
+.photo-box {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #00c8ff, #0066ff);
+  box-shadow: 0 0 35px #00c8ff77;
+  overflow: hidden;
+}
+
+.profile {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #101a2b;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.tag {
+  color: var(--blue);
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  margin: 20px 0;
+  line-height: 1.15;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 25px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #00111d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px #00c8ff88;
+}
+
+.clock {
+  margin-top: 22px;
+  color: #8be5ff;
+  font-size: 17px;
+}
+
+section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.heading {
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.heading span {
+  color: var(--blue);
+}
+
+.about-text {
+  max-width: 750px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  padding: 30px 20px;
+  background: var(--card);
+  border: 1px solid #203a55;
+  border-radius: 14px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue);
+  box-shadow: 0 0 20px #00c8ff22;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 13px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social a {
+  padding: 14px 24px;
+  border: 1px solid var(--blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+.social a:hover {
+  background: var(--blue);
+  color: #00111d;
+}
+
+footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--muted);
+  border-top: 1px solid #203a55;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 4%;
+  }
+
+  nav {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    text-align: center;
+    gap: 35px;
+    padding: 55px 6%;
+  }
+
+  .photo-box {
+    width: 220px;
+    height: 220px;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PRIYANSH.</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+
+  <div class="photo-box">
+    <img
+      src="./profile.jpg"
+      alt="Priyansh profile photo"
+      class="profile"
+    >
+  </div>
+
+  <div class="hero-text">
+    <div class="tag">WELCOME TO MY PORTFOLIO</div>
+
+    <h1>
+      Hi, I'm <span>Priyansh Jaat</span>
+    </h1>
+
+    <p>
+      Aspiring Developer | Coding Enthusiast |
+      Technology & Cybersecurity Learner.
+      I enjoy learning new technologies and
+      building creative digital projects.
+    </p>
+
+    <a class="btn" href="#projects">Explore My Work</a>
+
+    <div class="clock" id="clock">Loading time...</div>
+  </div>
+
+</div>
+
+<section id="about">
+  <h2 class="heading">About <span>Me</span></h2>
+
+  <p class="about-text">
+    Hello! I'm Priyansh Jaat.
+    I am interested in coding, web development,
+    networking and technology.
+    My goal is to keep learning new skills
+    and create useful digital projects.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="heading">My <span>Skills</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>HTML</h3>
+      <p>Website structure and development.</p>
+    </div>
+
+    <div class="card">
+      <h3>CSS</h3>
+      <p>Modern website styling and design.</p>
+    </div>
+
+    <div class="card">
+      <h3>JavaScript</h3>
+      <p>Interactive website development.</p>
+    </div>
+
+    <div class="card">
+      <h3>Python</h3>
+      <p>Learning programming and logic.</p>
+    </div>
+
+    <div class="card">
+      <h3>Networking</h3>
+      <p>Understanding computer networks.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cybersecurity</h3>
+      <p>Learning digital security basics.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="heading">My <span>Projects</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Personal Portfolio</h3>
+      <p>My personal website made using HTML and CSS.</p>
+    </div>
+
+    <div class="card">
+      <h3>Coming Soon</h3>
+      <p>More coding projects will be added here.</p>
+    </div>
+
+    <div class="card">
+      <h3>Learning Journey</h3>
+      <p>Exploring programming and web development.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="heading">Connect <span>With Me</span></h2>
+
+  <p class="about-text">
+    Follow my journey and connect with me online.
+  </p>
+
+  <div class="social">
+    <a href="https://instagram.com/priyansh.vyn"
+       target="_blank" rel="noopener">
+       Instagram
+    </a>
+
+    <a href="https://github.com/"
+       target="_blank" rel="noopener">
+       GitHub
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Priyansh Jaat | Personal Portfolio
+</footer>
+
+<script>
+function updateClock() {
+  const now = new Date();
+
+  document.getElementById("clock").textContent =
+    "Local Time: " + now.toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
